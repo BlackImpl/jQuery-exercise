@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script src="http://libs.baidu.com/jquery/1.9.0/jquery.js" type="text/javascript"></script>
+<title>挑战题</title>
+<!-- 
+在页面中,添加一个<ul>元素,里面放置多个(至少7个以上)的<li>元素,此外,再添加一个<a>元素用来控制显示和隐藏前五个元素之后的元素。
+-->
+<style>
+    .hide{display:none;}
+    .show{display:;}
+</style>
+</head>
+<body>
+    <ul>
+        <li>001</li>
+        <li>002</li>
+        <li>003</li>
+        <li>004</li>
+        <li>005</li>
+        <li>006</li>
+        <li>007</li>
+        <li>008</li>
+        <li>009</li>
+        <li>010</li>
+    </ul>
+    <a href="javascript:void(0);">更多</a> 
+</body>
+<script type="text/javascript">
+    $(function(){
+        hidden_other(); 
+        $("a").click(function(){
+            var $value = $(this).text();
+            if($value == "更多"){
+                $(this).text("简化");
+                show_other();
+            }else{
+                $(this).text("更多");
+                hidden_other();
+            }
+        });
+    });
+    
+    <!-- 隐藏第五个li元素之后的元素 -->
+    function hidden_other(){
+        $("li:gt(4)").attr("class","hide");  
+    };
+    
+    <!-- 显示第五个li元素之后的元素 -->
+    function show_other(){
+        $("li:gt(4)").attr("class","show");
+    };
+     
+</script>
+</html>
