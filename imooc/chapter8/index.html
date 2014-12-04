@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script src="http://libs.baidu.com/jquery/1.9.0/jquery.js" type="text/javascript"></script>
+<title>挑战题</title>
+</head>
+<body>
+    <ul id="student_ul">
+    </ul>
+</body>
+
+<script>
+   $(function(){
+        var students = [
+			{id:1,"name":"testName1", age:20},
+		    {id:2,"name":"testName2", age:18},
+			{id:3,"name":"testName3", age:19}
+		];
+		$.each(students, function(index, student){
+			$("#student_ul").append("<li>" + student.name +" " + student.age + "</li>");
+		}); 
+    });
+</script>
+</html>
